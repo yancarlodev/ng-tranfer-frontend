@@ -5,12 +5,11 @@ import { setCookies, deleteCookie } from 'cookies-next'
 import { successToast } from "../../utils/successToast"
 import { errorToast } from "../../utils/errorToast"
 import { useRouter } from "next/router"
+import { LoaderContext } from "../Loader"
 
 export const SessionContext = createContext<ISessionContext>({} as ISessionContext)
 
 interface ISessionContext {
-    isLoading: boolean,
-    setIsLoading: (state: boolean) => void,
     handleLogin: (userData: ILoginData) => void,
     handleRegister: (userData: IRegisterData) => void,
     handleLogout: () => void
@@ -21,7 +20,8 @@ interface IProps {
 }
 
 const SessionProvider = ({children}: IProps): JSX.Element => {
-    const [isLoading, setIsLoading] = useState<boolean>(false)
+    const { isLoading, setIsLoading } = useContext(LoaderContext)
+    
     const router = useRouter()
 
     const handleLogin = (userData: ILoginData): void => {
@@ -65,7 +65,7 @@ const SessionProvider = ({children}: IProps): JSX.Element => {
     }
 
     return(
-        <SessionContext.Provider value={{isLoading, setIsLoading, handleLogin, handleRegister, handleLogout}}>
+        <SessionContext.Provider value={{ handleLogin, handleRegister, handleLogout }}>
             {children}
         </SessionContext.Provider>
     )

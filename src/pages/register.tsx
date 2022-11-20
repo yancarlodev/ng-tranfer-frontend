@@ -6,12 +6,31 @@ import SessionBox from '../components/SessionBox'
 import styles from '../styles/Session.module.sass'
 import { FaUser, FaLock } from 'react-icons/fa'
 import Button from '../components/Button/index.tsx'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { SessionContext } from '../contexts/SessionContext'
 import { registerSchema } from '../validators/sessionSchema'
+import { useRouter } from 'next/router'
+import { LoaderContext } from '../contexts/Loader'
+import Loader from '../components/Loader'
+import LoaderBetweenPages from '../components/LoaderBetweenPages'
 
 const Register = () => {
     const { handleRegister } = useContext(SessionContext)
+    const { handleLoadingBetweenPagesStart, handleLoadingBetweenPagesStop }  = useContext(LoaderContext)
+
+    const router = useRouter()
+
+    useEffect(() => {
+        router.events.on('routeChangeStart', handleLoadingBetweenPagesStart)
+        router.events.on('routeChangeComplete', handleLoadingBetweenPagesStop)
+        router.events.on('routeChangeError', handleLoadingBetweenPagesStop)
+
+        return () => {
+            router.events.off('routeChangeStart', handleLoadingBetweenPagesStart)
+            router.events.off('routeChangeComplete', handleLoadingBetweenPagesStop)
+            router.events.off('routeChangeError', handleLoadingBetweenPagesStop)
+        }
+    }, [router])
 
     return(
         <div>
@@ -27,6 +46,9 @@ const Register = () => {
                         <Button>Register</Button>
                     </Form>
                 </SessionBox>
+
+                <Loader/>
+                <LoaderBetweenPages/>
             </Background>
         </div>
     )
