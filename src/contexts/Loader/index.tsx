@@ -4,7 +4,7 @@ interface IProps {
     children: ReactNode
 }
 
-interface ILoaderProvider {
+interface ILoaderContext {
     isLoading: boolean,
     setIsLoading: (state: boolean) => void,
     isLoadingBetweenPages: boolean,
@@ -12,7 +12,7 @@ interface ILoaderProvider {
     handleLoadingBetweenPagesStop: () => void
 }
 
-export const LoaderContext = createContext<ILoaderProvider>({} as ILoaderProvider)
+export const LoaderContext = createContext<ILoaderContext>({} as ILoaderContext)
 
 const LoaderProvider = ({children}: IProps): JSX.Element => {
     const [isLoading, setIsLoading] = useState<boolean>(false)
