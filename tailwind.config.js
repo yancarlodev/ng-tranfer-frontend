@@ -7,10 +7,11 @@ module.exports = {
     theme: {
     colors: {
             backgroundColor: '#333333',
-            boxColor: '434343',
+            boxColor: '#434343',
             primaryColor: '#ffffff',
+            inputBackground: '#373737',
             buttonText: '#000000',
-            placeholder: '#E1E1E1',
+            placeholderColor: '#E1E1E1',
             negative: '#DD4B4B',
             positive: '#45AA34'
         },
@@ -21,8 +22,7 @@ module.exports = {
             title1: "2.0rem",
             title2: "1.5rem",
             headline: "1rem",
-            headline2: "1rem",
-            headline3: "0.875rem",
+            headline2: "0.875rem",
             placeholder: "1rem",
         },
             fontWeight: {
