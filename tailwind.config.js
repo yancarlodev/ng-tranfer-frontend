@@ -30,6 +30,7 @@ module.exports = {
             semibold: "600",
             medium: "500",
             regular: "400",
+            light: "300"
         },
         extend: {},
     },

@@ -1,2 +1,59 @@
-.text
-    @apply text-[100px]
+.container
+    @apply flex-col w-full min-h-screen h-full bg-backgroundColor
+
+.header
+    @apply flex py-5 w-full justify-center
+
+.wrapper
+    @apply flex flex-wrap w-[80%] max-w-[1200px] justify-between items-center
+
+.main
+    @apply flex flex-col items-center gap-11
+    
+.board
+    @apply flex justify-center py-10 bg-boxColor w-full
+
+.greetings
+    @apply text-title1 font-bold text-primaryColor
+
+.balanceContainer
+    @apply flex flex-col gap-3 items-end
+
+.transactionWrapper
+    @apply flex flex-col w-[80%] max-w-[1200px] justify-between items-center
+
+.filterContainer
+    @apply flex flex-wrap justify-between w-full pb-2 border-b-2 border-primaryColor
+
+.rotateArrow
+    @apply rotate-180
+
+.listName
+    @apply text-title2 font-bold text-primaryColor
+
+.filterList
+    @apply flex gap-3 items-center pr-2
+
+.transactionList
+    @apply flex flex-col w-full pt-4 pb-8 gap-4
+
+.newTransactionButton
+    @apply flex w-full justify-center p-4 text-[20px] font-bold text-primaryColor bg-boxColor rounded-lg hover:brightness-90
+
+.transactionCard
+    @apply flex flex-col gap-2 w-full p-4 text-primaryColor bg-boxColor rounded-lg
+
+.transactionInfo
+    @apply flex justify-between items-center
+
+.transactionType
+    @apply text-headline2 font-light
+
+.transactionText
+    @apply text-headline font-bold
+
+.transactionValuePositive
+    @apply text-headline font-semibold text-positive
+
+.transactionValueNegative
+    @apply text-headline font-semibold text-negative

@@ -20,7 +20,7 @@ interface IProps {
 }
 
 const SessionProvider = ({children}: IProps): JSX.Element => {
-    const { isLoading, setIsLoading } = useContext(LoaderContext)
+    const { setIsLoading } = useContext(LoaderContext)
     
     const router = useRouter()
 
@@ -34,7 +34,7 @@ const SessionProvider = ({children}: IProps): JSX.Element => {
             router.push('/')
         })
         .catch((error) => {
-            errorToast(`${error.response.data.message}!`)
+            errorToast(`${error?.response?.data?.message}!` || 'Something goes wrong, please try again!')
         })
         .finally(() => {
             setIsLoading(false)
@@ -52,7 +52,7 @@ const SessionProvider = ({children}: IProps): JSX.Element => {
             router.push('/login')
         })
         .catch((error) => {
-            errorToast(`${error.response.data.message}!`)
+            errorToast(`${error?.response?.data?.message}!` || 'Something goes wrong, please try again!')
         })
         .finally(() => {
             setIsLoading(false)

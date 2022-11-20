@@ -6,7 +6,7 @@ interface IProps {
 
 const Background = ({children}: IProps): JSX.Element => {
     return(
-        <div className="flex justify-center items-center w-full h-screen bg-backgroundColor">
+        <div className="flex justify-center items-center w-full min-h-screen -h-full bg-backgroundColor">
             {children}
         </div>
     )

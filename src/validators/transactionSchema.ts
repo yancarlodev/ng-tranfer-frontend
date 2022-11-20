@@ -1,6 +1,6 @@
 import * as yup from 'yup'
 
-interface ICashOutData {
+export interface ICashOutData {
     username: string,
     value: string
 }
