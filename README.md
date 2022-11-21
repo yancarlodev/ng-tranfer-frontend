@@ -21,6 +21,7 @@
 
 ## ✅ Links
 
+- [x] Figma: https://www.figma.com/file/o1Xbj2S6WyY7IIVrnJerRg/N.G-Transfer?node-id=0%3A1&t=76rCmIcEtNm8MOcd-1
 - [x] Aplicação em produção: https://ng-tranfer-frontend.vercel.app/
 - [x] <a href="https://github.com/yancarlodev/ng-tranfer-frontend">Github do projeto</a>
 
