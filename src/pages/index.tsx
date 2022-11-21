@@ -99,7 +99,7 @@ const Dashboard = ({ accountId, username }: IProps): JSX.Element => {
             <div className={styles.container}>
                 <header className={styles.header}>
                     <div className={styles.wrapper}>
-                        <Image src='/Ng.Cash Logo.svg' alt='NG.Cash logo' width={105} height={68}/>
+                        <Image src='./Ng.Cash Logo.svg' alt='NG.Cash logo' width={105} height={68}/>
                         <SmallButton onClick={handleLogout}>Logout</SmallButton>
                     </div>
                 </header>

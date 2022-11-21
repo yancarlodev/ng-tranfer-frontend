@@ -34,7 +34,7 @@ const SessionProvider = ({children}: IProps): JSX.Element => {
             router.push('/')
         })
         .catch((error) => {
-            errorToast(`${error?.response?.data?.message}!` || 'Something goes wrong, please try again!')
+            errorToast(error?.response?.data?.message ? `${error?.response?.data?.message}!` : 'Something goes wrong, please try again!')
         })
         .finally(() => {
             setIsLoading(false)
@@ -52,7 +52,7 @@ const SessionProvider = ({children}: IProps): JSX.Element => {
             router.push('/login')
         })
         .catch((error) => {
-            errorToast(`${error?.response?.data?.message}!` || 'Something goes wrong, please try again!')
+            errorToast(error?.response?.data?.message ? `${error?.response?.data?.message}!` : 'Something goes wrong, please try again!')
         })
         .finally(() => {
             setIsLoading(false)
